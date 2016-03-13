@@ -1,6 +1,33 @@
 __author__ = 'Michael'
 
-# Write code to remove duplicates from an unsorted linked list
+# Implement a MyQueue class which implements a queue using two stacks.
+
+
+class MyQueue:
+    def __init__(self):
+        self.a = Stack()
+        self.b = Stack()
+
+    def __str__(self):
+        while self.a.count > 0:
+            self.b.push(self.b.pop())
+
+        return str(self.b)
+
+    def count(self):
+        return self.a.count + self.b.count
+
+    def enqueue(self, value):
+        while self.a.count > 0:
+            self.b.push(self.a.pop())
+
+        self.b.push(value)
+
+    def dequeue(self):
+        while self.b.count > 0:
+            self.a.push(self.b.pop())
+
+        return self.a.pop()
 
 
 class Stack:
@@ -41,7 +68,11 @@ class Stack:
 
         node = self.head
         self.head = node.next
-        self.head.previous = None
+
+        if self.head is None:
+            self.tail = None
+        else:
+            self.head.previous = None
 
         self.count -= 1
 
@@ -59,23 +90,25 @@ class Node:
 
 
 def main():
-    test_stack = setup_test_stack()
-    print(test_stack)
+    test_queue = setup_test_queue()
+    print(test_queue)
 
-    print(test_stack.pop())
-    print(test_stack.pop())
-    print(test_stack.pop())
-    print(test_stack.pop())
-    print(test_stack)
+    print(test_queue.dequeue())
+    print(test_queue.dequeue())
+    print(test_queue.dequeue())
+    print(test_queue.dequeue())
+    (test_queue.enqueue("A"))
+    (test_queue.enqueue("P"))
+    print(test_queue)
 
 
-def setup_test_stack():
-    stack = Stack()
+def setup_test_queue():
+    queue = MyQueue()
 
-    for x in range(10):
-        stack.push(x % 7)
+    for x in range(12):
+        queue.enqueue(x % 7)
 
-    return stack
+    return queue
 
 
 if __name__ == '__main__':

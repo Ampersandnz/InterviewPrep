@@ -83,27 +83,43 @@ class Node:
 
 
 def main():
-    test_list = setup_test_list()
+    list_1, list_2 = setup_test_list()
 
-    print(find_loop(test_list))
+    print(find_loop(list_1))
+    print(find_loop(list_2))
 
 
 def find_loop(linked_list):
-    pass
+    node = linked_list.head
+    visited = []
+
+    while node is not None:
+        if visited.__contains__(node):
+            return node.data
+
+        visited.append(node)
+        node = node.next
+
+    return None
 
 
 def setup_test_list():
-    test_list = LinkedList()
+    list_1 = LinkedList()
 
     for x in range(10):
-        test_list.add_to_tail(Node(x % 7))
+        list_1.add_to_tail(Node(x % 7))
 
-    node = test_list.tail
+    node = list_1.tail
     node = node.previous
 
-    node.next = test_list.head.next.next.next
+    node.next = list_1.head.next.next.next
 
-    return test_list
+    list_2 = LinkedList()
+
+    for x in range(8):
+        list_1.add_to_tail(Node(x % 3))
+
+    return list_1, list_2
 
 if __name__ == '__main__':
     main()

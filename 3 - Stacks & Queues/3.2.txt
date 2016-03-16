@@ -1,0 +1,5 @@
+How would you design a stack which, in addition to push and pop, also has a function min which returns the minimum element? Push, pop and min should all operate in O(1) time.
+
+The obvious approach would be to add a field to the stack class that tracks the current minimum value. Every time a value is pushed that is lower, it would be updated. However, when the minimum value was popped, we'd have to iterate over the whole stack to find the next lowest value, thus making pop() O(1) on average but O(n) in the worst case.
+
+A more complex approach that better meets the constraints of the question is to also maintain a second stack. This will double the memory complexity/requirements of the stack class, but will ensure O(1) in all cases for push(), pop(), and min(). To achieve this, the first stack holds the data values, as normal, while the second stack holds, for each value in the main stack, the minimum of all values below it. Thus min() is just a peek() on the second stack, pop() will remove the top value from both stacks, and when a new minimum is pushed, it is added to the stack of minima as well.

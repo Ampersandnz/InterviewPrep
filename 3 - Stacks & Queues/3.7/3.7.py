@@ -13,22 +13,32 @@ class Shelter:
         self.queue = []
 
     def __str__(self):
-        return str(self.queue[::-1])
+        return str(self.queue)
 
     def count(self):
         return len(self.queue)
 
     def enqueue(self, value):
-        self.queue.insert(0, value)
+        self.queue.append(value)
 
     def dequeue_any(self):
-        return self.queue.pop()
+        return self.queue.pop(0)
 
     def dequeue_dog(self):
-        return self.queue.pop()
+        try:
+            index = self.queue.index('dog')
+        except ValueError:
+            return
+
+        return self.queue.pop(index)
 
     def dequeue_cat(self):
-        return self.queue.pop()
+        try:
+            index = self.queue.index('cat')
+        except ValueError:
+            return
+
+        return self.queue.pop(index)
 
 
 def main():
@@ -36,10 +46,31 @@ def main():
 
     print(shelter)
 
+    shelter.dequeue_cat()
+    shelter.dequeue_cat()
+
+    print(shelter)
+
+    shelter.dequeue_any()
+    shelter.dequeue_any()
+    shelter.dequeue_any()
+
+    shelter.dequeue_cat()
+
+    print(shelter)
+
+    shelter.dequeue_dog()
+
+    print(shelter)
+
 
 def setup_shelter():
     shelter = Shelter()
 
+    shelter.enqueue('cat')
+    shelter.enqueue('cat')
+    shelter.enqueue('dog')
+    shelter.enqueue('dog')
     shelter.enqueue('cat')
     shelter.enqueue('dog')
 

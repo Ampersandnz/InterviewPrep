@@ -1,0 +1,7 @@
+You have 20 bottles of pills. 19 bottles have 1.0 gram pills, but one has pills
+of weight 1.1 grams. Given a scale that provides an exact measurement, how
+would you find the heavy bottle? You can only use the scale once.
+
+Number the bottles 1:20.
+From each bottle, put that many pills on the scale (ie 1 from bottle 1, 2 from bottle 2, etc)
+Weigh the collection of 210 pills. The total weight will be 210 + (0.1 * number of the different bottle)

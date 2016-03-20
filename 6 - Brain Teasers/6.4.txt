@@ -1,0 +1,13 @@
+A bunch of people are living on an island, when a visitor comes with a strange
+order: all blue-eyed people must leave the island as soon as possible. There will
+be a flight out at 8:00pm every evening. Each person can see everyone else's
+eye color, but they do not know their own (nor is anyone allowed to tell them).
+Additionally, they do not know how many people have blue eyes, although they
+do know that at least one person does. How many days will it take the blue-eyed
+people to leave?
+
+This is a recursive problem:
+If there is only a single bue-eyed person living on the island, then he will leave on day 1 as he knows that at least one exists and that it is not any of the others.
+If there are two blue-eyed people, then each knows that if the other sees no other blue-eyed people, they will leave on the first night. Since neither leaves on night 1, they must both conclude they they also have blue eyes and will leave on the second day.
+This problem then scales infinitely - 3 blue-eyed people will each see that nobody left on the first or second day, and all leave on the third.
+It will take n days for all blue-eyed people to leave, where n is their number.

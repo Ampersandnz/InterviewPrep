@@ -1,0 +1,17 @@
+You have a basketball hoop and someone says that you can play one of two
+games.
+Game 1: You get one shot to make the hoop.
+Game 2: You get three shots and you have to make two of three shots.
+If p is the probability of making a particular shot, for which values of p should
+you pick one game or the other?
+
+Game 1: p(win) = p(shot)
+Game 2: p(win) = (p(1st) * p(2nd)) + (1 - p(1st) * p(2nd) * p(3rd)) + (p(1st) * 1 - p(2nd) * p(3rd))
+			   = (p * p) + ((1 - p) * p * p) + (p * (1 - y) * p)
+			   = p^2 + (1 - p)p^2 + (1 - p)p^2
+			   = p^2y + p^2 -p^3 + p^2 -p^3
+		p(win) = 3p^2 -2p^3
+
+The games are fair when p = 0, 0.5, or 1
+Game 1 is better when p < 0.5
+Game 2 is better when p > 0.5

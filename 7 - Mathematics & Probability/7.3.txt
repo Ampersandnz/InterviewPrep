@@ -1,0 +1,10 @@
+ Given two lines on a Cartesian plane, determine whether the two lines would
+intersect.
+
+Assuming lines of infinite length.
+
+If the lines are both straight and non-parallel, they will meet.
+
+If the lines can be curves, the situation becomes more complex. Most curves will still meet, but things like sine waves, diminishing functions with limits, parabola and hyperbola can be positioned such that the y do not meet.
+
+(This is an awful explanation I swear I understand the concept I just can't verbalise it.)

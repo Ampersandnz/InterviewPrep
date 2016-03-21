@@ -1,0 +1,20 @@
+There are 100 closed lockers in a hallway. A man begins by opening all 100
+lockers. Next, he closes every second locker. Then, on his third pass, he toggles
+every third locker (closes it if it is open or opens it if it is closed). This process
+continues for 100 passes, such that on each pass i, the man toggles every ith
+locker. After his 100th pass in the hallway, in which he toggles only locker #100,
+how many lockers are open?
+
+The lockers that are open are the ones which are products of an odd number of numbers between 1 and 100, including 1 and themselves.
+Therefore, once the process is complete the lockers remaining open are perfect squares, as any other number will have an even number of factors:
+
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100

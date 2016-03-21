@@ -1,0 +1,8 @@
+There is a building of 100 floors. If an egg drops from the Nth floor or above, it
+will break. If it's dropped from any floor below, it will not break. You're given two
+eggs. Find N, while minimizing the number of drops for the worst case.
+
+While I've seen this problem answered online and I know a better approach exists, I can't figure it out myself so I'd use a simple binary search.
+Drop egg # 1 from the 50th floor, egg #2 from the 25th or 75th (depending on the result of the first drop), and continue halving the search space until an answer of sufficient accuracy is found.
+
+The question itself is a little confusing - it seems to want to minimise egg usage while finding N, but also states that only two eggs are provided.

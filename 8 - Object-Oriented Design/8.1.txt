@@ -11,4 +11,5 @@ I am currently unsure as to how to implement players' hands. Potentially another
 
 This should suffice as a base structure, that could be extended to support specific rules for each game implementation.
 
-For Blackjack, I would begin by 
+For Blackjack, I would first create an overarching GameController, that would manage the 'phases' of each round - initial dealing to each player, players' turns, the reveal of cards and the tracking of scores (likely via a Scoreboard class). Any input/output functionality required would be managed by specific classes, to allow for flexibility, modifiability, and strong separation of concerns.
+

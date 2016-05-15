@@ -1,0 +1,18 @@
+Design the data structures for a generic deck of cards. Explain how you would
+subclass the data structures to implement blackjack.
+
+I would begin with a Deck class, representing a deck of cards. By default it would be initialised containing a single stack of the standard 52 Card objects, with a boolean option for including jokers, and optional arguments to specify multiple whole decks, or subsets of a normal deck. Functions would be provided to draw cards from, and place them into, the deck, as well as shuffling.
+
+Each Card object would have a Suit and a Value, both Enums.
+
+A second Deck object would be used as a discard pile in many games.
+
+I am currently unsure as to how to implement players' hands. Potentially another Deck object could be used, but this may be conceptually confusing, so I think I'd favour an Interface representing an ordered set of cards that would be implemented by both Deck and Hand, and provided Count, Add, and Draw functions.
+
+This should suffice as a base structure, that could be extended to support specific rules for each game implementation.
+
+For Blackjack, I would first create an overarching GameController, that would manage the 'phases' of each round - initial dealing to each player, players' turns, the reveal of cards and the tracking of scores (likely via a separate Scoreboard class). Any I/O functionality required should be separated out into dedicated classes.
+
+The would likely also need to be a GameBoard class representing the table. This would be simple to conceptualise and implement, and would assist in the visual display of the game state. An MVC model would be used, with both full GUI and text-only terminal displays available.
+
+Every class would implement an interface of some kind, as I'd plan to extend the project to support other games in the future.

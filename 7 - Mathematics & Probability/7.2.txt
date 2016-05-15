@@ -1,0 +1,16 @@
+There are three ants on different vertices of a triangle. What is the probability of collision (between any two or all of them) if they start walking on the sides of the triangle? Assume that each ant randomly picks a direction, with either direction being equally likely to be chosen, and that they walk at the same speed.
+
+Similarly, find the probability of collision with n ants on an n-vertex polygon
+
+p(Collision) = 1 - p(No collision)
+p(No collision) = p(all 3 walk clockwise, or all 3 walk anticlockwise)
+It doesn't matter which way the first goes, as long as the other two match
+Two options per ant
+Therefore p(No collision) = 1 * 1/2 * 1/2 = 1/4
+p(Collision) = 1 - 1/4 = 3/4
+
+On a n-gon:
+p(Collision) = 1 - p(No collision)
+p(No collision) = 1 * 1/2 * 1/2 .... n
+p(No collision) = 1/2 ^ (n - 1)
+p(Collision) = 1 - (1/2 ^ (n - 1))

@@ -1,0 +1,10 @@
+Given two squares on a two-dimensional plane, find a line that would cut these two squares in half. Assume that the top and the bottom sides of the square run parallel to the x-axis.
+
+As a square is symmetrical, any line that passes through its centre will bisect it into identical halves.
+Therefore, we need to find the line that passes through the centre of both squares.
+
+Assumption: We have the co-ordinates and dimensions of both squares
+Centre of each square = ((top right x - top left x)/2 + top left x, (top left y - bottom left y)/2 + top left y)
+Line equation: y = mx + c
+m = (y2 - y1) / (x2 - x1), where (x1, y1) and (x2, y2) are the coordinates of the centres of the two squares
+Sub x1 and y1 into the equation to calculate c

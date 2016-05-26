@@ -1,0 +1,20 @@
+Design a parking lot using object-oriented principles.
+
+As the parking lot itself doesn't take any actions, it would act in a similar way to a server - responding appropriately to incoming requests, but never initiating anything.
+I would use a main encompassing ParkingLot class, with constructor parameters to specify the number of floors, the number of parks per floor, the default park dimensions, and some kind of representation of the layout of each floor. For speed, I would use some form of hashmap to map a ticket number to a park number/object. This allows for easy lookup when a vehicle leaves the building, rather than having to iterate over every park until it is found.
+
+ParkingLot would NOT be a singleton (like some of the other questions in this chapter), as it's common for a building/block/city to have multiple parking lots.
+
+Each ParkingLot would keep track of how many free spaces it had in its contained parking spots, and would provide an API for vehicles to:
+	Get the number of free spots (likely a list giving the number per floor)
+	Request the total fee currently owed
+	Pay some or all of the current owed amount
+	Request entry/exit (while this does not exactly model reality, as it's possible to force your way in or out of the building, it's better software)
+	Reserve a park
+	Request entry with a reservation
+	Get a floor plan/sitemap
+	Contact the owners (this would need some per-user rate limiting to prevent spam)
+
+All requests for free spaces, reservations, or entering a park would also allow vehicle dimensions parameters
+
+Each ParkingSpot instance would contain the data about its size, and the a reference to the vehicle (if any) currently occupying it. It would also contain a reference to a reservation, which could be made via the main ParkingLot object. Reserved parks count towards the number of occupied parks in the building, even if there is no car actually in them. ParkingSpots are private to the ParkingLot via the intermediary Floor class (which does little beyond structuring objects in a more conceptually accurate manner).

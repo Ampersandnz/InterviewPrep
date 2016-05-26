@@ -18,3 +18,12 @@ Each ParkingLot would keep track of how many free spaces it had in its contained
 All requests for free spaces, reservations, or entering a park would also allow vehicle dimensions parameters
 
 Each ParkingSpot instance would contain the data about its size, and the a reference to the vehicle (if any) currently occupying it. It would also contain a reference to a reservation, which could be made via the main ParkingLot object. Reserved parks count towards the number of occupied parks in the building, even if there is no car actually in them. ParkingSpots are private to the ParkingLot via the intermediary Floor class (which does little beyond structuring objects in a more conceptually accurate manner).
+
+The ParkingLot also needs a set of rules regarding how long users can stay in each type of park, as well as pricing/rates (this may even differ between parks depending on sizing, floor, time of day, etc). I believe the best approach is to give each ParkingSpot a reference to a set of pricing rules, and have the ParkingLot do a specific lookup when necessary.
+
+Other concerns:
+	Admin control (for instance, to mark a floor as temporarily unavailable, to manually adjust things like reservations and ParkingSpace details)
+	Error checking/validation (especially, if this is to control a real building and not just simulate one, to regularly check if the digital model matches reality)
+	Security (this system should interface with the cameras etc - if something happens and the logs must be reviewed then the system's records can help to match a certain car to a camera image where the license plate is not readable)
+
+Obviously, this is not everything that could reasonably go into such a system, but I have provided a solid starting point that I would expand on further if the interviewer were to request it.

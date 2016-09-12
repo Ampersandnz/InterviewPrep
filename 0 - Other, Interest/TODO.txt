@@ -1,4 +1,3 @@
 Tail recursion
-Functional programming (likely in Scala)
 semaphores/locks
 caching/memoisation/tabulation

@@ -1,4 +1,6 @@
-Tutorial: Learn You A Haskell [http://learnyouahaskell.com/introduction]
+Tutorial: Learn You A Haskell [http://learnyouahaskell.com/chapters]
+
+//NOTE: Have read up to http://learnyouahaskell.com/recursion
 
 All variables immutable
 Functions have no side-effects - they take inputs, calculate something, and return a value

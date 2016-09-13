@@ -6,7 +6,7 @@ doubleAndSum x y = double x + double y
 
 -- Doubles a number iff it is equal to or less than 100
 doubleIfSmall x = if x < 101 then double x else x
-
+ 
 -- Returns a list containing the values of the input doubled
 doubleList y = [double x | x <- y]
 
@@ -29,6 +29,10 @@ factorial :: (Integral a) => a -> a
 factorial 0 = 1  
 factorial n = n * factorial (n - 1)
 
---Pattern matching on tuple input. Note that the pattern IS a catch-all, as the function definition forces an input of two tuples.
+-- Pattern matching on tuple input. Note that the pattern IS a catch-all, as the function definition forces an input of two tuples.
 addVectors :: (Num a) => (a, a) -> (a, a) -> (a, a)  
-addVectors (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)  
+addVectors (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
+
+-- Higher order function - takes another function as a parameter
+applyTwice :: (a -> a) -> a -> a  
+applyTwice f x = f (f x) 

@@ -1,7 +1,5 @@
 Tutorial: Learn You A Haskell [http://learnyouahaskell.com/chapters]
 
-//NOTE: Have read up to http://learnyouahaskell.com/recursion
-
 All variables immutable
 Functions have no side-effects - they take inputs, calculate something, and return a value
   Possible to write to files?
@@ -51,3 +49,15 @@ Ranges:
 
   Lazy evaluation allows for infinite lists as inputs into other functions (NOT as variables)
     take 24 [13,26..]
+
+"Folds can be used to implement any function where you traverse a list once, element by element, and then return something based on that. Whenever you want to traverse a list to return something, chances are you want a fold."
+
+$ = function to apply a function
+Can be used with a literal/variable argument to map it to a list of functions
+
+
+
+
+
+
+//NOTE: Have read up to http://learnyouahaskell.com/making-our-own-types-and-typeclasses

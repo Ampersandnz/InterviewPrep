@@ -1,3 +1,0 @@
-Set up event listeners in the front-end that can poll for changed data.
-Use https://www.npmjs.com/package/dota2-gsi to pull data into the backend.
-Display details of incoming events.

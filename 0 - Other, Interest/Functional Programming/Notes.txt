@@ -1,0 +1,63 @@
+Tutorial: Learn You A Haskell [http://learnyouahaskell.com/chapters]
+
+All variables immutable
+Functions have no side-effects - they take inputs, calculate something, and return a value
+  Possible to write to files?
+Static typing with Type Inference
+
+People use ' and the end of a function name to denote strict or slightly modified version of the function
+
+:l Func
+  Loads in the functions from the source file Func.hs
+    :r to reload with changes
+
+Functions names may not begin with an upper-case letter
+
+Else clause in conditionals is mandatory - Function MUST return a value
+
+Strings are just lists of characters - list operations work on them
+
+Haskell appears to use linked lists internally
+  Appending to end (list ++ [x]) is slow for large n
+  Inserting to first (x:list) is fase
+
+Retrieving from list: list !! index
+
+Lists can nest
+
+List operators:
+  head = first element (list !! 0)
+  tail = ALL other elements (NOT just the last)
+  last = last element (list !! length)
+  init = ALL other elements (index 0 : length -1)
+    None of these functions work on an empty list
+  length = self-explanatory
+  null = Returns a boolean emptiness check
+  reverse = returns the reverse
+  take = gets n elements from beginning of list
+
+Infix functions:
+  input `func` input2
+    eg val `elem` list
+  Do NOT need to be written differently - this notation will work on anything with two inputs
+
+Ranges:
+  [1..20]
+  [a..g]
+  Can specify a step
+  [2,4..30]
+
+  Lazy evaluation allows for infinite lists as inputs into other functions (NOT as variables)
+    take 24 [13,26..]
+
+"Folds can be used to implement any function where you traverse a list once, element by element, and then return something based on that. Whenever you want to traverse a list to return something, chances are you want a fold."
+
+$ = function to apply a function
+Can be used with a literal/variable argument to map it to a list of functions
+
+
+
+
+
+
+//NOTE: Have read up to http://learnyouahaskell.com/making-our-own-types-and-typeclasses

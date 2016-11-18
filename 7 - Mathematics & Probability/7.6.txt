@@ -1,0 +1,22 @@
+Given a two-dimensional graph with points on it, find a line which passes the most number of points.
+
+Assumption: 'line' does in fact mean a linear formula of the form y = mx + c, and not a curve of any kind, as it would be possible to construct a curve which passed through every point, no matter how complex the arrangement.
+
+Naive approach:
+Each valid solution will pass through a minimum of two points.
+Therefore, construct a dictionary of point - point pairs and iterate over them, counting the number of points intersected.
+Keep track of the current maximum, and once it is found, use the standard (x2 - x1) / (y2 - y1) approach to calculate the gradient.
+Then plug in any of the known points along the line to get the y-intercept.
+This algorithm will find the correct answer (and, in fact, all equal highest answers), but it has a time complexity of O(n^2)
+
+
+0 1 2 3 4 5 6 7 8 9
+1                  
+2               .  
+3     .            
+4                  
+5             .    
+6                  
+7  .    .          
+8                  
+9           .      
